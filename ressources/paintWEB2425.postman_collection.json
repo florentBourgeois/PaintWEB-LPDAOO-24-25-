@@ -1,0 +1,263 @@
+{
+	"info": {
+		"_postman_id": "254353a9-8b59-4cf7-bff6-85dfcb7d3586",
+		"name": "paintWEB2425",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4348525"
+	},
+	"item": [
+		{
+			"name": "full dessin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "server/dessin",
+					"host": [
+						"server"
+					],
+					"path": [
+						"dessin"
+					]
+				},
+				"description": "Récupère l'ensemble des dessins existant dans le projet.\n\nCette route affiche également leurs formes. Elle ne doit pas être utilisée pour gérer des données en front (il ne faut pas autant d'informations)"
+			},
+			"response": []
+		},
+		{
+			"name": "dessin 1 details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "server/dessin/1",
+					"host": [
+						"server"
+					],
+					"path": [
+						"dessin",
+						"1"
+					]
+				},
+				"description": "Récupère l'ensemble des informations du dessin 1\n\nNécéssaire pour afficher le dessin 1 dans l'IHM (alternative : server/formes/dessin/1"
+			},
+			"response": []
+		},
+		{
+			"name": "dessin 1 details Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "server/dessin/1",
+					"host": [
+						"server"
+					],
+					"path": [
+						"dessin",
+						"1"
+					]
+				},
+				"description": "supprime le dessin 1"
+			},
+			"response": []
+		},
+		{
+			"name": "Ajout dessin (picasso)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nom\" : \"mon picasso\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "server/dessin",
+					"host": [
+						"server"
+					],
+					"path": [
+						"dessin"
+					]
+				},
+				"description": "ajoute un nouveau dessin dans la bdd (nommé picasso)"
+			},
+			"response": []
+		},
+		{
+			"name": "dessin 1 ajout rectangle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\" : \"Rectangle\",\n    \"x\" : 100,\n    \"y\" : 200,\n    \"hauteur\" : 10,\n    \"largeur\" : 50\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "server/dessin/1",
+					"host": [
+						"server"
+					],
+					"path": [
+						"dessin",
+						"1"
+					]
+				},
+				"description": "ajoute un rectangle au dessin 1"
+			},
+			"response": []
+		},
+		{
+			"name": "dessin 1 ajout cercle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\" : \"Cercle\",\n    \"x\" : 100,\n    \"y\" : 200,\n    \"rayon\" : 20\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "server/dessin/1",
+					"host": [
+						"server"
+					],
+					"path": [
+						"dessin",
+						"1"
+					]
+				},
+				"description": "ajoute un cercle au dessin 1"
+			},
+			"response": []
+		},
+		{
+			"name": "dessin 1 ajout Triangle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\" : \"Cercle\",\n    \"x\" : 10,\n    \"y\" : 20,\n    \"coté\" : 30\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "server/dessin/1",
+					"host": [
+						"server"
+					],
+					"path": [
+						"dessin",
+						"1"
+					]
+				},
+				"description": "ajoute un cercle au dessin 1"
+			},
+			"response": []
+		},
+		{
+			"name": "dessin id et nom",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "server/dessin/short",
+					"host": [
+						"server"
+					],
+					"path": [
+						"dessin",
+						"short"
+					]
+				},
+				"description": "Récupère l'ensemble des dessins existant dans le projet.\n\nSeuls les ID et les Noms des dessins sont communiqués (utile pour proposer une liste de dessin cliquable"
+			},
+			"response": []
+		},
+		{
+			"name": "formes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "server/forme",
+					"host": [
+						"server"
+					],
+					"path": [
+						"forme"
+					]
+				},
+				"description": "Récupère la liste de toutes les formes.\n\nn'est pas utile en front"
+			},
+			"response": []
+		},
+		{
+			"name": "formes du dessin 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "server/forme/dessin/1",
+					"host": [
+						"server"
+					],
+					"path": [
+						"forme",
+						"dessin",
+						"1"
+					]
+				},
+				"description": "Récupère la liste de toutes les formes du dessin 1.\n\nNécéssaire pour affiché le dessin. Une alternative est la route server/dessin/1"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "localhost:8080",
+			"type": "string"
+		}
+	]
+}
