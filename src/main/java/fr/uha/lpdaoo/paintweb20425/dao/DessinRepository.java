@@ -11,7 +11,7 @@ import java.util.List;
 public interface DessinRepository extends JpaRepository<Dessin, Long> {
 
 
-    @Query(value = "select d.id as ID from Dessin as d")
-    List<JustIdDTO> getDessinsIDs();
+    @Query(value = "select d.id as ID, d.nom as nom from Dessin as d")
+    List<DessinShort> getDessinsShort();
 
 }

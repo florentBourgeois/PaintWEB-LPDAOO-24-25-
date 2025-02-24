@@ -12,12 +12,31 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "server/dessin",
+					"raw": "{{server}}/dessin",
 					"host": [
-						"server"
+						"{{server}}"
 					],
 					"path": [
 						"dessin"
+					]
+				},
+				"description": "Récupère l'ensemble des dessins existant dans le projet.\n\nCette route affiche également leurs formes. Elle ne doit pas être utilisée pour gérer des données en front (il ne faut pas autant d'informations)"
+			},
+			"response": []
+		},
+		{
+			"name": "liste dessin (id,nom)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{server}}/dessin/short",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"dessin",
+						"short"
 					]
 				},
 				"description": "Récupère l'ensemble des dessins existant dans le projet.\n\nCette route affiche également leurs formes. Elle ne doit pas être utilisée pour gérer des données en front (il ne faut pas autant d'informations)"
@@ -30,9 +49,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "server/dessin/1",
+					"raw": "{{server}}/dessin/1",
 					"host": [
-						"server"
+						"{{server}}"
 					],
 					"path": [
 						"dessin",
@@ -44,14 +63,14 @@
 			"response": []
 		},
 		{
-			"name": "dessin 1 details Copy",
+			"name": "delete dessin 1",
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "server/dessin/1",
+					"raw": "{{server}}/dessin/1",
 					"host": [
-						"server"
+						"{{server}}"
 					],
 					"path": [
 						"dessin",
@@ -77,9 +96,9 @@
 					}
 				},
 				"url": {
-					"raw": "server/dessin",
+					"raw": "{{server}}/dessin",
 					"host": [
-						"server"
+						"{{server}}"
 					],
 					"path": [
 						"dessin"
@@ -90,7 +109,7 @@
 			"response": []
 		},
 		{
-			"name": "dessin 1 ajout rectangle",
+			"name": "dessin 2 ajout rectangle",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -104,13 +123,13 @@
 					}
 				},
 				"url": {
-					"raw": "server/dessin/1",
+					"raw": "{{server}}/dessin/2",
 					"host": [
-						"server"
+						"{{server}}"
 					],
 					"path": [
 						"dessin",
-						"1"
+						"2"
 					]
 				},
 				"description": "ajoute un rectangle au dessin 1"
@@ -118,7 +137,7 @@
 			"response": []
 		},
 		{
-			"name": "dessin 1 ajout cercle",
+			"name": "dessin 2 ajout cercle",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -132,13 +151,13 @@
 					}
 				},
 				"url": {
-					"raw": "server/dessin/1",
+					"raw": "{{server}}/dessin/2",
 					"host": [
-						"server"
+						"{{server}}"
 					],
 					"path": [
 						"dessin",
-						"1"
+						"2"
 					]
 				},
 				"description": "ajoute un cercle au dessin 1"
@@ -146,13 +165,13 @@
 			"response": []
 		},
 		{
-			"name": "dessin 1 ajout Triangle",
+			"name": "dessin 2 ajout Triangle",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"type\" : \"Cercle\",\n    \"x\" : 10,\n    \"y\" : 20,\n    \"coté\" : 30\n}",
+					"raw": "{\n    \"type\" : \"Triangle\",\n    \"x\" : 10,\n    \"y\" : 20,\n    \"coté\" : 30\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -160,35 +179,16 @@
 					}
 				},
 				"url": {
-					"raw": "server/dessin/1",
+					"raw": "{{server}}/dessin/2",
 					"host": [
-						"server"
+						"{{server}}"
 					],
 					"path": [
 						"dessin",
-						"1"
+						"2"
 					]
 				},
 				"description": "ajoute un cercle au dessin 1"
-			},
-			"response": []
-		},
-		{
-			"name": "dessin id et nom",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "server/dessin/short",
-					"host": [
-						"server"
-					],
-					"path": [
-						"dessin",
-						"short"
-					]
-				},
-				"description": "Récupère l'ensemble des dessins existant dans le projet.\n\nSeuls les ID et les Noms des dessins sont communiqués (utile pour proposer une liste de dessin cliquable"
 			},
 			"response": []
 		},
@@ -198,9 +198,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "server/forme",
+					"raw": "{{server}}/forme",
 					"host": [
-						"server"
+						"{{server}}"
 					],
 					"path": [
 						"forme"
@@ -216,9 +216,9 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "server/forme/dessin/1",
+					"raw": "{{server}}/forme/dessin/1",
 					"host": [
-						"server"
+						"{{server}}"
 					],
 					"path": [
 						"forme",

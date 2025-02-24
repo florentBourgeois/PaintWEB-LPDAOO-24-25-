@@ -29,6 +29,8 @@ public class PaintWeb20425Application {
 
             dessinRepository.save(d);
 
+            dessinRepository.save(new Dessin("dessin vide"));
+
             dessinRepository.save(UtilsDrawGenerator.genereRandomDessin(5));
             dessinRepository.save(UtilsDrawGenerator.genereRandomDessin(50));
             dessinRepository.save(UtilsDrawGenerator.genereRandomDessin(1));
@@ -36,8 +38,10 @@ public class PaintWeb20425Application {
             dessinRepository.save(UtilsDrawGenerator.genereRandomDessin(100));
 
             System.out.println("\nil y a " + dessinRepository.count() + "dessins dans la bdd");
+            dessinRepository.getDessinsShort().forEach(j -> System.out.println(j.getID() + " | " + j.getNom()));
 
-            System.out.println("\n\nFIN \n---------------");
+
+            System.out.println("\nFIN \n---------------");
         };
     }
 }

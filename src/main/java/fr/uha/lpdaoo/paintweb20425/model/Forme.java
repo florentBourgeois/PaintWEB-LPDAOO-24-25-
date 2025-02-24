@@ -24,6 +24,8 @@ public abstract class Forme {
         this.y = y;
     }
 
+    public abstract String getType();
+
     public abstract int getPerimetre();
     public abstract String toHTMLCanvas();
 

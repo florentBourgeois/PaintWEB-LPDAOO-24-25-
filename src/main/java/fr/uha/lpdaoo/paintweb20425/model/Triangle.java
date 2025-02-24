@@ -19,6 +19,11 @@ public class Triangle extends Forme{
         this.cote = cote;
     }
 
+    @Override
+    public String getType() {
+        return "Triangle";
+    }
+
     public int getCote() {
         return cote;
     }

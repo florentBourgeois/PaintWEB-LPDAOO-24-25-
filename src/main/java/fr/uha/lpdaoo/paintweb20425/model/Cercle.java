@@ -20,6 +20,11 @@ public class Cercle extends Forme{
         this.rayon = rayon;
     }
 
+    @Override
+    public String getType() {
+        return "Cercle";
+    }
+
     public int getRayon() {
         return rayon;
     }

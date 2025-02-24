@@ -24,6 +24,11 @@ public class Rectangle extends Forme{
         this.hauteur = hauteur;
     }
 
+    @Override
+    public String getType() {
+        return "Rectangle";
+    }
+
     public void setLongueur(int longueur) {
         this.longueur = longueur;
     }
