@@ -1,0 +1,52 @@
+@startuml
+abstract class Forme {
+  - int x
+  - int y
+  + {abstract}  int getPerimetre()
+  + {abstract}  String toHTMLCanvas()
+  + int getX()
+  + int getY()
+  + void setX(int)
+  + void translate(int, int)
+  + String toString()
+}
+
+class Rectangle {
+  - int longueur
+  - int hauteur
+
+  + void setLongueur(int)
+  + int getPerimetre()
+  + String toHTMLCanvas()
+  + String toString()
+}
+
+class Cercle {
+  - int rayon
+
+  + int getPerimetre()
+  + String toHTMLCanvas()
+  + String toString()
+}
+
+class Triangle {
+  - int cote
+
+  + int getPerimetre()
+  + String toHTMLCanvas()
+  + String toString()
+}
+
+class Dessin {
+  + void addForme(Forme)
+  + int getPerimetre()
+  + void translate(int, int)
+  + String toHTMLCanvas()
+  + String toString()
+}
+
+Forme <|-- Rectangle
+Forme <|-- Cercle
+Forme <|-- Triangle
+Dessin -> Forme : formes
+@enduml
